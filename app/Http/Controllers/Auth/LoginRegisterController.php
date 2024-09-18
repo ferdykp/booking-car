@@ -11,7 +11,6 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
-// use GuzzleHttp\Middleware;
 
 class LoginRegisterController extends Controller implements HasMiddleware
 {
@@ -30,7 +29,7 @@ class LoginRegisterController extends Controller implements HasMiddleware
         $request->validate([
                 'name' =>'required|string|max:250',
                 'email'=> 'required|string|email:rfc,dns|max:250|unique:users,email',
-                'password'=> 'required|string|min:8|confirmed'
+                'password'=> 'required|string|min:4|confirmed'
             ]);
         $user = User::create([
             'name'=> $request->name,
@@ -41,7 +40,8 @@ class LoginRegisterController extends Controller implements HasMiddleware
             $credentials = $request->only('email','password');
             Auth::attempt($credentials);
             $request->session()->regenerate();
-            return redirect()->route('home')
+
+            return redirect()->route('login')
                 ->withSuccess('Success');
     }
 
