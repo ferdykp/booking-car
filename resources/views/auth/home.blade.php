@@ -27,8 +27,8 @@
                 </div>
             </div>
     
-            <nav class="mt-10">
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
+            <nav class="mt-10" >
+                <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25 no-underline" href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,7 +40,7 @@
                     <span class="mx-3">Dashboard</span>
                 </a>
     
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 no-underline hover:text-gray-100"
                     href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -52,7 +52,7 @@
                     <span class="mx-3">Input Cars</span>
                 </a>
     
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 no-underline hover:text-gray-100"
                     href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -64,7 +64,7 @@
                     <span class="mx-3">Tables</span>
                 </a>
     
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 no-underline hover:text-gray-100"
                     href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -145,15 +145,15 @@
                             style="display: none;"></div>
     
                         <div x-show="dropdownOpen"
-                            class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl"
+                            class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl" 
                             style="display: none;">
                             <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white no-underline">Profile</a>
                             <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white no-underline">Products</a>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white no-underline">Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                         </div>
@@ -258,23 +258,33 @@
                                         <tr>
                                             <th
                                                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                No</th>
+                                            <th
+                                                class="px-2 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                                 Name</th>
                                             <th
-                                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                class="px-2 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                                 Title</th>
                                             <th
-                                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                class="px-2 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                                 Status</th>
                                             <th
-                                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                class="px-2 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                                 Role</th>
-                                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                            <th
+                                                class="px-2 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                Action</th>
                                         </tr>
                                     </thead>
     
                                     <tbody class="bg-white">
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                            <td class="px-8 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                {{-- {{ $loop->iteration }} --}}
+                                                <div class="text-sm font-medium leading-5 text-gray-900">1
+                                                </div>
+                                            </td>
+                                            <td class="px-2 py-4 whitespace-no-wrap border-b border-gray-200">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 w-10 h-10">
                                                         <img class="w-10 h-10 rounded-full"
@@ -290,23 +300,23 @@
                                                 </div>
                                             </td>
     
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                            <td class="px-2 py-4 whitespace-no-wrap border-b border-gray-200">
                                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
                                             </td>
     
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                            <td class="px-2 py-4 whitespace-no-wrap border-b border-gray-200">
                                                 <span
                                                     class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Active</span>
                                             </td>
     
                                             <td
-                                                class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                                class="px-2 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                                                 Owner</td>
     
                                             <td
-                                                class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                class="px-2 py-4 text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900 no-underline">Edit</a>
                                             </td>
                                         </tr>
                                     </tbody>
