@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('booking_car', function (Blueprint $table) {
             $table->id();
+            $table->string('customer');
+            $table->string('no_hp', 13);
+            $table->date('rent_start');
+            $table->date('rent_end');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\BookingCarController;
 
 Route::get('/', function () {
     return view('index');
@@ -18,4 +19,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
     
     Route::get('/home', 'home')->name('home');
     Route::post('/logout', 'logout')->name('logout');
+    
+    route::resource('booking', BookingCarController::class);
 });
