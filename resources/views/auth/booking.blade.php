@@ -7,6 +7,8 @@
     <title>Booking Car</title>
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ asset('js/phone-input.js') }}"></script>
+    @yield('scripts') <!-- Tempat untuk menyisipkan skrip tambahan -->
 </head>
 <body>
 <div>
@@ -247,20 +249,33 @@
                     </div>
     
                     <div class="mt-8">
-
-                        <div class="w-full ">
-                            <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
-                                <div class="sm:col-span-4">
-                                    <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
-                                        <div class="mt-2">
-                                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                            <input type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-3 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="janesmith">
-                                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col px-5 py-6 bg-white rounded-md shadow-sm">
+                                <div class="mt-6 w-full">
+                                    <label for="customer" class="block text-sm font-medium leading-6 text-gray-900">Customer Name</label>
+                                    <div class="mt-2">
+                                        <input type="text" id="customer" name="customer" type="customer" autocomplete="customer" placeholder="Customer Name" class="block w-full max-w-xl rounded-md border-2 border-gray-900 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
+                                </div>
+
+                                <div class="mt-6 w-full">
+                                    <label for="no_hp" class="block text-sm font-medium leading-6 text-gray-900">Telephone Number</label>
+                                    <div class="mt-2">
+                                        <input type="tel" inputmode="numeric" id="no_hp" name="no_hp" type="no_hp" required pattern="^\+?[0-9]{10,13}$" autocomplete="no_hp" placeholder="Phone Number" class="block w-full max-w-xl rounded-md border-2 border-gray-900 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <!-- Tambahkan elemen form lain di sini jika diperlukan -->
+                                <div class="mt-4">
+                                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                                        Submit
+                                    </button>
+                                </div>
+                                
                             </div>
                         </div>
-    
                     </div>
+                    
     
                     <div class="flex flex-col mt-8">
                         <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
