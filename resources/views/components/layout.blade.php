@@ -17,9 +17,11 @@
         </x-sidebar>
         <x-navbar>
         </x-navbar>
-        <x-main>
+
+        <x-blank>
             {{ $page_name }}
-        </x-main>
+            {{ $slot }}
+        </x-blank>
     </div>
     </div>
     </div>
