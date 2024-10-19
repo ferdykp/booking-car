@@ -26,5 +26,13 @@ Route::controller(LoginRegisterController::class)->group(function () {
         return view('auth.add');
     });
 
-    route::resource('booking', BookingCarController::class);
+    // route::resource('booking', BookingCarController::class);
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/auth/booking', [BookingCarController::class, 'index'])->name('booking.index');
+    Route::post('/auth/booking', [BookingCarController::class, 'store'])->name('booking.store');
+});
+
+
+

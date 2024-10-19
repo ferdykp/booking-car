@@ -1,8 +1,8 @@
 <x-master>
     <x-slot:page_title>
-        Dashbrot
+        Dashboard
     </x-slot:page_title>
     <x-slot:page_name>
-        Test
+        Dashboard
     </x-slot:page_name>
 </x-master>
