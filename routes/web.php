@@ -21,17 +21,11 @@ Route::controller(LoginRegisterController::class)->group(function () {
 
     Route::get('/home', 'home')->name('home');
     Route::post('/logout', 'logout')->name('logout');
-
-    Route::get('/add', function () {
-        return view('auth.add');
-    });
-
-    // route::resource('booking', BookingCarController::class);
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/auth/booking', [BookingCarController::class, 'index'])->name('booking.index');
-    Route::post('/auth/booking', [BookingCarController::class, 'store'])->name('booking.store');
+Route::controller(BookingCarController::class)->group(function () {
+    Route::get('/booking', 'create')->name('booking.create');
+    Route::post('/booking/store', 'store')->name('booking.store');
 });
 
 

@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\BookingCar;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Illuminate\Routing\Controller;
 
 class BookingCarController extends Controller
 {
-    public function index()
-    {
-// Return the create booking view located in auth directory
-return view('auth.booking');    }
+    // public function __construct(){
+    // $this->middleware('auth')->only(['store', 'create']); // Hanya untuk rute tertentu
+    // }
+
+    public function create(): View {
+        return view('booking.booking');
+    }
 
     /**
-     * Simpan booking baru ke database.
+     * Store a new booking in the database.
      */
     public function store(Request $request)
     {
-        // Validate and store booking details
+        // Validate the form inputs
         $validated = $request->validate([
             'customer' => 'required|string|max:255',
             'no_hp' => 'required|string|max:13',
@@ -28,6 +33,8 @@ return view('auth.booking');    }
         // Store booking details in the database
         BookingCar::create($validated);
 
-        return redirect()->route('booking.index')->with('success', 'Booking successfully created!');
+        // Redirect back to the form with a success message
+        return redirect()->route('booking.create')->with('success', 'Booking has been successfully submitted!');
+
     }
 }

@@ -79,6 +79,7 @@
                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white no-underline">Logout</a>
                      <form id="logout-form" action="{{ route('logout') }}" method="POST">
                          @csrf
+                     </form>
                  </div>
              </div>
          </div>
